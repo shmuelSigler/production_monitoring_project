@@ -1,16 +1,15 @@
 name: Production Monitoring
 
 on:
-
   workflow_dispatch: # Put here!!
   schedule:
     # Runs every 10 minutes
-    - cron: '*/10 * * * *'
+    - cron: "*/10 * * * *"
 
 jobs:
   monitor:
+    name: monitor chargeflow.io
     runs-on: ubuntu-latest
-
     steps:
       - name: Check Website
         run: |
