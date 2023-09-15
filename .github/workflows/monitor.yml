@@ -1,6 +1,7 @@
 nname: Production Monitoring
 
 on:
+  workflow_dispatch: # Put here!!
   schedule:
     # Runs every 10 minutes
     - cron: '*/10 * * * *'
