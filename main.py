@@ -51,6 +51,7 @@ def main():
     if previous_downtime < 10:
         if current_hour % 2 == 0 and current_min == 0:
             downtime = random.randint(5, 15)
+            print(downtime)
             status = "HASISSUES"
         else:
             status = monitor_website()
