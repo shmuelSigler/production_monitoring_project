@@ -1,0 +1,37 @@
+name: Production Monitoring
+
+on:
+
+  workflow_dispatch: # Put here!!
+  schedule:
+    # Runs every 10 minutes
+    - cron: '*/10 * * * *'
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Website
+        run: |
+          # Install Python
+          sudo apt-get update -y
+          sudo apt-get install python3 -y
+
+          # Clone the repository
+          git clone https://github.com/shmuelSigler/production_monitoring_project.git
+
+          # Change directory to the repository
+          cd production_monitoring_project
+
+          # Install required Python packages
+          pip install requests
+
+          # Execute the Python script
+          python3 main.py
+
+      - name: Upload downtime artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: downtime-artifact
+          path: downtime.txt
