@@ -42,7 +42,7 @@ def main():
     current_hour = time.localtime().tm_hour     # The hour (0-23)
     current_min = time.localtime().tm_min       # The minute (0-59)
     downtime = 0
-
+    print(current_hour, current_min)
     # Load the previous downtime value from the workflow artifact
     previous_downtime = int(os.getenv("PREVIOUS_DOWNTIME", "0"))
 
