@@ -30,6 +30,12 @@ jobs:
           python3 main.py
 
       - name: Upload downtime artifact
+        if: success() && always()  # Only run if the previous step was successful
+        run: echo "Downtime artifact" > downtime.txt
+        shell: bash
+
+      - name: Upload downtime artifact
+        if: success() && always()  # Only run if the previous step was successful
         uses: actions/upload-artifact@v2
         with:
           name: downtime-artifact

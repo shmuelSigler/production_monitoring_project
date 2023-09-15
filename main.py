@@ -58,7 +58,7 @@ def main():
 
     # Save the current downtime value as an artifact for the next run
     with open("downtime.txt", "w") as downtime_file:
-        downtime_file.write(f'PREVIOUS_DOWNTIME={str(downtime)}')
+        downtime_file.write(str(downtime))
 
     update_instatus(status)
 
