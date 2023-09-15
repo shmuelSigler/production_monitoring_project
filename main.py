@@ -45,7 +45,7 @@ def main():
     print(current_hour, current_min)
     # Load the previous downtime value from the workflow artifact
     previous_downtime = int(os.getenv("PREVIOUS_DOWNTIME", "0"))
-
+    print(previous_downtime)
     # Simulate failures at specific times (2:00am, 4:00am, 6:00am)
     if previous_downtime < 10:
         if current_hour % 2 == 0 and current_min == 0:
@@ -58,7 +58,7 @@ def main():
 
     # Save the current downtime value as an artifact for the next run
     with open("downtime.txt", "w") as downtime_file:
-        downtime_file.write(str(downtime))
+        downtime_file.write(f'PREVIOUS_DOWNTIME={str(downtime)}')
 
     update_instatus(status)
 
