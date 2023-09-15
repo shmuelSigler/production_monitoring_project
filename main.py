@@ -39,8 +39,8 @@ def monitor_website():
 
 
 def main():
-    current_hour = 0     # The hour (0-23)
-    current_min = 0      # The minute (0-59)
+    current_hour = time.localtime().tm_hour     # The hour (0-23)
+    current_min = time.localtime().tm_min       # The minute (0-59)
     downtime = 0
     print(current_hour, current_min)
     # Load the previous downtime value from the workflow artifact
@@ -50,7 +50,7 @@ def main():
     # Simulate failures at specific times (2:00am, 4:00am, 6:00am)
     if previous_downtime < 10:
         if current_hour % 2 == 0 and current_min == 0:
-            downtime = 12
+            downtime = random.randint(5, 15)
             status = "HASISSUES"
         else:
             status = monitor_website()
