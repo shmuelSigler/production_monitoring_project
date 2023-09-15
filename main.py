@@ -16,7 +16,7 @@ def update_instatus(status):
     }
 
     data = {
-        "status": "HASISSUES",
+        "status": status,
     }
 
     response = requests.put(
@@ -25,7 +25,7 @@ def update_instatus(status):
         data=json.dumps(data),
     )
 
-    print(response.json()["status"])
+    # print(response.json()["status"])
     return response.status_code
 
 
@@ -44,8 +44,9 @@ def main():
     downtime = 0
     print(current_hour, current_min)
     # Load the previous downtime value from the workflow artifact
-    previous_downtime = int(os.getenv("PREVIOUS_DOWNTIME", "0"))
+    previous_downtime = int(os.getenv("DOWNTIME", "0"))
     print(previous_downtime)
+
     # Simulate failures at specific times (2:00am, 4:00am, 6:00am)
     if previous_downtime < 10:
         if current_hour % 2 == 0 and current_min == 0:
