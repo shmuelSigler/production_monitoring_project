@@ -1,4 +1,4 @@
-nname: Production Monitoring
+name: Production Monitoring
 
 on:
   workflow_dispatch: # Put here!!
