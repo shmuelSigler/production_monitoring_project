@@ -26,7 +26,6 @@ def update_instatus(status):
     )
 
     # print(response.json()["status"])
-    return response.status_code
 
 
 def monitor_website():
