@@ -42,11 +42,11 @@ def main():
     current_hour = time.localtime().tm_hour     # The hour (0-23)
     current_min = time.localtime().tm_min       # The minute (0-59)
     downtime = 0
-    print(current_hour, current_min)
+    print("hour and minute:", current_hour, current_min)
     with open("downtime.txt", "r") as file:
         previous_downtime = int(file.read())
 
-    print(previous_downtime)
+    print("previous_downtime:", previous_downtime)
 
     # Simulate failures at specific times (2:00am, 4:00am, 6:00am)
     if previous_downtime < 10:
@@ -59,10 +59,11 @@ def main():
     else:
         status = "HASISSUES"
 
-    # Save the current downtime value as an artifact for the next run
+    # Save the current downtime value for the next run
     with open("downtime.txt", "w") as downtime_file:
         downtime_file.write(str(downtime))
 
+    print("new downtime:", downtime)
     update_instatus(status)
 
 
