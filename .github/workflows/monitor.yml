@@ -26,14 +26,3 @@ jobs:
         run: |
           python main.py
 
-      - name: Upload downtime artifact
-        if: success() && always()
-        run: echo "DOWNTIME=$(cat downtime.txt)" > downtime.env
-        shell: bash
-
-      - name: Upload Downtime Artifact
-        if: success() && always()
-        uses: actions/upload-artifact@v2
-        with:
-          name: downtime-artifact
-          path: downtime.env

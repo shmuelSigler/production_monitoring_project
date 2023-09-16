@@ -43,8 +43,9 @@ def main():
     current_min = time.localtime().tm_min       # The minute (0-59)
     downtime = 0
     print(current_hour, current_min)
-    # Load the previous downtime value from the workflow artifact
-    previous_downtime = int(os.getenv("DOWNTIME", "0"))
+    with open(file_path, "r") as file:
+        previous_downtime = file.read()
+
     print(previous_downtime)
 
     # Simulate failures at specific times (2:00am, 4:00am, 6:00am)
