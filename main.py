@@ -65,15 +65,6 @@ def main():
     print("new downtime:", downtime)
     update_instatus(status)
 
-    # Specify the file path (replace 'your_file.txt' with the actual file name)
-    file_path = 'downtime.txt'
-
-    # Get the absolute file path
-    absolute_path = os.path.abspath(file_path)
-
-    # Print the absolute file path
-    print("Absolute file path:", absolute_path)
-
 
 if __name__ == "__main__":
     main()
