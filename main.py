@@ -43,7 +43,7 @@ def main():
     current_min = time.localtime().tm_min       # The minute (0-59)
     downtime = 0
     print(current_hour, current_min)
-    with open(file_path, "r") as file:
+    with open(downtime.txt, "r") as file:
         previous_downtime = file.read()
 
     print(previous_downtime)
