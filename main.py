@@ -44,7 +44,7 @@ def main():
     downtime = 0
     print(current_hour, current_min)
     with open(downtime.txt, "r") as file:
-        previous_downtime = file.read()
+        previous_downtime = int(file.read())
 
     print(previous_downtime)
 
