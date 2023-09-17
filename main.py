@@ -49,7 +49,7 @@ def main():
 
     # Simulate failures at specific times (2:00am, 4:00am, 6:00am)
     if previous_downtime < 10:
-        if true:
+        if True:
             downtime = random.randint(5, 15)
             print(downtime)
             status = "HASISSUES"
