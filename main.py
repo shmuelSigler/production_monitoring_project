@@ -64,7 +64,7 @@ def close_incident(incident_id):
         print("Incident closed successfully.")
     else:
         print("Failed to close incident.")
-        print(response.text)  # Print the error message, if any
+        print(response.text)
 
 
 def monitor_website():
