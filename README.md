@@ -7,9 +7,11 @@ PagerDuty is an Incident Management System (IMS) that helps organizations manage
 
 ##  Key Features                                                                   
 
-- periodically pinging chargeflow.io and simulating different response scenarios.By Using GitHub Actions to run the script at 10-minute intervals. Simulate different responses, including failures for 5-15 minutes at the start of even hours (e.g., 2:00 AM, 4:00 AM, 6:00 AM).
+- Periodically pinging chargeflow.io and simulating different response scenarios - using GitHub Actions to run the script at 10-minute intervals. 
+-
+- Simulate different responses, including failures for 5-15 minutes at the start of even hours (e.g., 2:00 AM, 4:00 AM, 6:00 AM).
 
-- Webhook for real-time communication and incident management between these two systems. In Case of failure - open an incident at PagerDuty, which update the status page. As the incident progresses and is eventually resolved, PagerDuty can update the incident status and keep a detailed log of actions. 
+- Webhook for real-time communication and incident management between these two systems: In Case of failure - open an incident at PagerDuty, which update the status page. As the incident progresses and is eventually resolved, PagerDuty can update the incident status and keep a detailed log of actions. 
 
  ## Run Locally
 
