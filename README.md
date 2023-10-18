@@ -50,3 +50,7 @@ Run the application
 [Create an Incident in PagerDuty](https://developer.pagerduty.com/api-reference/a7d81b0e9200f-create-an-incident): Create an incident synchronously.
 
 
+<a href="https://trackgit.com">
+<img src="https://us-central1-trackgit-analytics.cloudfunctions.net/token/ping/lnviyhhylz3670604jln" alt="trackgit-views" />
+</a>
+
